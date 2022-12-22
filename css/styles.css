@@ -480,6 +480,30 @@ body {
   margin-top: calc(2 * var(--primary-margin-btwn-items));
 }
 
+.portfolio-img-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 40px 32px;
+  overflow-y: scroll;
+  transform: translate(0, 100%);
+
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+
+  background-color: var(--primary-brand);
+  color: #f4f4fd;
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .portfolio-link {
   display: block;
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
@@ -490,6 +514,11 @@ body {
 .portfolio-link:hover,
 .portfolio-link:focus {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+.portfolio-link:hover .overlay,
+.portfolio-link:focus .overlay {
+  transform: translate(0, 0);
 }
 
 .example-description {
